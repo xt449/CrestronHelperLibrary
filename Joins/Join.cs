@@ -3,7 +3,7 @@ using System;
 
 namespace SimplSharpTools
 {
-	internal abstract class Join<T> : IDisposable
+	public abstract class Join<T> : IDisposable
 	{
 		protected readonly BasicTriList triList;
 		public readonly uint id;

@@ -4,7 +4,7 @@ using System;
 
 namespace SimplSharpTools.Joins
 {
-	internal class SerialJoin : Join<string>
+	public class SerialJoin : Join<string>
 	{
 		public SerialJoin(BasicTriList triList, uint id) : base(triList, id)
 		{

@@ -4,7 +4,7 @@ using System;
 
 namespace SimplSharpTools.Joins
 {
-	internal class AnalogJoin : Join<ushort>
+	public class AnalogJoin : Join<ushort>
 	{
 		public AnalogJoin(BasicTriList triList, uint id) : base(triList, id)
 		{

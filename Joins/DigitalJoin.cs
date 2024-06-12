@@ -4,7 +4,7 @@ using System;
 
 namespace SimplSharpTools.Joins
 {
-	internal class DigitalJoin : Join<bool>
+	public class DigitalJoin : Join<bool>
 	{
 		public DigitalJoin(BasicTriList triList, uint id) : base(triList, id)
 		{
