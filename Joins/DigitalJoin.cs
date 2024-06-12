@@ -22,7 +22,7 @@ namespace SimplSharpTools.Joins
 		{
 			if (args.Sig.Type == eSigType.Bool && args.Sig.Number == id)
 			{
-				OnChange(args.Sig.BoolValue);
+				OnChange?.Invoke(args.Sig.BoolValue);
 			}
 		}
 	}
