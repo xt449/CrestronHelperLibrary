@@ -34,7 +34,7 @@ namespace SimplSharpTools.Joins
 			}
 		}
 
-		public DigitalJoin GetDigitialJoin(uint id)
+		public DigitalJoin GetDigitalJoin(uint id)
 		{
 			if (digitalJoins.TryGetValue(id, out var digitalJoin))
 			{

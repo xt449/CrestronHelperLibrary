@@ -18,7 +18,7 @@ namespace SimplSharpTools.Joins
 			this.smartObject.SigChange += SmartObject_SigChange;
 		}
 
-		public SmartObjectDigitalJoin GetDigitialJoin(uint id)
+		public SmartObjectDigitalJoin GetDigitalJoin(uint id)
 		{
 			if (digitalJoins.TryGetValue(id, out var digitalJoin))
 			{
