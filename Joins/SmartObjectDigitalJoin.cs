@@ -6,9 +6,9 @@ namespace SimplSharpTools.Joins
 	public class SmartObjectDigitalJoin : IJoin<bool>
 	{
 		protected readonly SmartObject smartObject;
-		public readonly uint id;
+		public readonly string id;
 
-		internal SmartObjectDigitalJoin(SmartObject smartObject, uint id)
+		internal SmartObjectDigitalJoin(SmartObject smartObject, string id)
 		{
 			this.smartObject = smartObject;
 			this.id = id;

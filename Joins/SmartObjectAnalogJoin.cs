@@ -6,9 +6,9 @@ namespace SimplSharpTools.Joins
 	public class SmartObjectAnalogJoin : IJoin<ushort>
 	{
 		protected readonly SmartObject smartObject;
-		public readonly uint id;
+		public readonly string id;
 
-		internal SmartObjectAnalogJoin(SmartObject smartObject, uint id)
+		internal SmartObjectAnalogJoin(SmartObject smartObject, string id)
 		{
 			this.smartObject = smartObject;
 			this.id = id;

@@ -7,9 +7,9 @@ namespace SimplSharpTools.Joins
 	{
 		public readonly SmartObject smartObject;
 
-		private readonly Dictionary<uint, SmartObjectDigitalJoin> digitalJoins;
-		private readonly Dictionary<uint, SmartObjectAnalogJoin> analogJoins;
-		private readonly Dictionary<uint, SmartObjectSerialJoin> serialJoins;
+		private readonly Dictionary<string, SmartObjectDigitalJoin> digitalJoins;
+		private readonly Dictionary<string, SmartObjectAnalogJoin> analogJoins;
+		private readonly Dictionary<string, SmartObjectSerialJoin> serialJoins;
 
 		internal SmartObjectJoinManager(SmartObject smartObject)
 		{
@@ -18,7 +18,7 @@ namespace SimplSharpTools.Joins
 			this.smartObject.SigChange += SmartObject_SigChange;
 		}
 
-		public SmartObjectDigitalJoin GetDigitalJoin(uint id)
+		public SmartObjectDigitalJoin GetDigitalJoin(string id)
 		{
 			if (digitalJoins.TryGetValue(id, out var digitalJoin))
 			{
@@ -28,7 +28,7 @@ namespace SimplSharpTools.Joins
 			return digitalJoins[id] = new SmartObjectDigitalJoin(smartObject, id);
 		}
 
-		public SmartObjectAnalogJoin GetAnalogJoin(uint id)
+		public SmartObjectAnalogJoin GetAnalogJoin(string id)
 		{
 			if (analogJoins.TryGetValue(id, out var analogJoin))
 			{
@@ -38,7 +38,7 @@ namespace SimplSharpTools.Joins
 			return analogJoins[id] = new SmartObjectAnalogJoin(smartObject, id);
 		}
 
-		public SmartObjectSerialJoin GetSerialJoin(uint id)
+		public SmartObjectSerialJoin GetSerialJoin(string id)
 		{
 			if (serialJoins.TryGetValue(id, out var serialJoin))
 			{
@@ -53,13 +53,13 @@ namespace SimplSharpTools.Joins
 			switch (args.Sig.Type)
 			{
 				case eSigType.Bool:
-					digitalJoins[args.Sig.Number].Change(args.Sig.BoolValue);
+					digitalJoins[args.Sig.Name].Change(args.Sig.BoolValue);
 					break;
 				case eSigType.UShort:
-					analogJoins[args.Sig.Number].Change(args.Sig.UShortValue);
+					analogJoins[args.Sig.Name].Change(args.Sig.UShortValue);
 					break;
 				case eSigType.String:
-					serialJoins[args.Sig.Number].Change(args.Sig.StringValue);
+					serialJoins[args.Sig.Name].Change(args.Sig.StringValue);
 					break;
 			}
 		}

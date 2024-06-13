@@ -6,9 +6,9 @@ namespace SimplSharpTools.Joins
 	public class SmartObjectSerialJoin : IJoin<string>
 	{
 		protected readonly SmartObject smartObject;
-		public readonly uint id;
+		public readonly string id;
 
-		internal SmartObjectSerialJoin(SmartObject smartObject, uint id)
+		internal SmartObjectSerialJoin(SmartObject smartObject, string id)
 		{
 			this.smartObject = smartObject;
 			this.id = id;
