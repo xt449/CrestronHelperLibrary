@@ -1,7 +1,7 @@
 ﻿using Crestron.SimplSharpPro.DeviceSupport;
 using System;
 
-namespace SimplSharpTools
+namespace SimplSharpTools.Joins
 {
 	public abstract class Join<T> : IDisposable
 	{
