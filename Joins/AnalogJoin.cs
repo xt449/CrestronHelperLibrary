@@ -1,29 +1,27 @@
-﻿using Crestron.SimplSharpPro;
-using Crestron.SimplSharpPro.DeviceSupport;
+﻿using Crestron.SimplSharpPro.DeviceSupport;
 using System;
 
 namespace SimplSharpTools.Joins
 {
-	public class AnalogJoin : Join<ushort>
+	public class AnalogJoin : IJoin<ushort>
 	{
-		public AnalogJoin(BasicTriList triList, uint id) : base(triList, id)
+		protected readonly BasicTriList triList;
+		public readonly uint id;
+
+		public AnalogJoin(BasicTriList triList, uint id)
 		{
+			this.triList = triList;
+			this.id = id;
 		}
 
-		public override event Action<ushort> OnChange;
-
-		public override ushort Value
+		public ushort Value
 		{
 			get => triList.UShortOutput[id].UShortValue;
 			set => triList.UShortInput[id].UShortValue = value;
 		}
 
-		protected override void TriList_SigChange(BasicTriList _, SigEventArgs args)
-		{
-			if (args.Sig.Type == eSigType.UShort && args.Sig.Number == id)
-			{
-				OnChange?.Invoke(args.Sig.UShortValue);
-			}
-		}
+		public event Action<ushort> OnChange;
+
+		internal void Change(ushort value) => OnChange?.Invoke(value);
 	}
 }
