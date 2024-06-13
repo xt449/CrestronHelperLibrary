@@ -142,6 +142,11 @@
     <Compile Include="Joins\DigitalJoin.cs" />
     <Compile Include="Joins\Join.cs" />
     <Compile Include="Joins\SerialJoin.cs" />
+    <Compile Include="Joins\SmartGraphics\SmartObjectSerialJoin.cs" />
+    <Compile Include="Joins\SmartGraphics\SmartObjectAnalogJoin.cs" />
+    <Compile Include="Joins\SmartGraphics\SmartObjectDigitalJoin.cs" />
+    <Compile Include="Joins\SmartGraphics\SGDFileHelper.cs" />
+    <Compile Include="Joins\SmartGraphics\SmartObjectJoin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
