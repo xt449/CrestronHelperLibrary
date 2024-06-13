@@ -8,7 +8,7 @@ namespace SimplSharpTools.Joins
 		protected readonly SmartObject smartObject;
 		public readonly uint id;
 
-		public SmartObjectAnalogJoin(SmartObject smartObject, uint id)
+		internal SmartObjectAnalogJoin(SmartObject smartObject, uint id)
 		{
 			this.smartObject = smartObject;
 			this.id = id;

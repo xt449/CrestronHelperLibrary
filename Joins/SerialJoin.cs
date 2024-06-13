@@ -8,7 +8,7 @@ namespace SimplSharpTools.Joins
 		protected readonly BasicTriList triList;
 		public readonly uint id;
 
-		public SerialJoin(BasicTriList triList, uint id)
+		internal SerialJoin(BasicTriList triList, uint id)
 		{
 			this.triList = triList;
 			this.id = id;
