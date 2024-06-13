@@ -1,29 +1,27 @@
-﻿using Crestron.SimplSharpPro;
-using Crestron.SimplSharpPro.DeviceSupport;
+﻿using Crestron.SimplSharpPro.DeviceSupport;
 using System;
 
 namespace SimplSharpTools.Joins
 {
-	public class SerialJoin : Join<string>
+	public class SerialJoin : IJoin<string>
 	{
-		public SerialJoin(BasicTriList triList, uint id) : base(triList, id)
+		protected readonly BasicTriList triList;
+		public readonly uint id;
+
+		public SerialJoin(BasicTriList triList, uint id)
 		{
+			this.triList = triList;
+			this.id = id;
 		}
 
-		public override event Action<string> OnChange;
-
-		public override string Value
+		public string Value
 		{
 			get => triList.StringOutput[id].StringValue;
 			set => triList.StringInput[id].StringValue = value;
 		}
 
-		protected override void TriList_SigChange(BasicTriList _, SigEventArgs args)
-		{
-			if (args.Sig.Type == eSigType.String && args.Sig.Number == id)
-			{
-				OnChange?.Invoke(args.Sig.StringValue);
-			}
-		}
+		public event Action<string> OnChange;
+
+		internal void Change(string value) => OnChange?.Invoke(value);
 	}
 }

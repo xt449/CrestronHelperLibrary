@@ -140,13 +140,13 @@
   <ItemGroup>
     <Compile Include="Joins\AnalogJoin.cs" />
     <Compile Include="Joins\DigitalJoin.cs" />
-    <Compile Include="Joins\Join.cs" />
+    <Compile Include="Joins\IJoin.cs" />
+    <Compile Include="Joins\JoinManager.cs" />
     <Compile Include="Joins\SerialJoin.cs" />
-    <Compile Include="Joins\SmartGraphics\SmartObjectSerialJoin.cs" />
-    <Compile Include="Joins\SmartGraphics\SmartObjectAnalogJoin.cs" />
-    <Compile Include="Joins\SmartGraphics\SmartObjectDigitalJoin.cs" />
-    <Compile Include="Joins\SmartGraphics\SGDFileHelper.cs" />
-    <Compile Include="Joins\SmartGraphics\SmartObjectJoin.cs" />
+    <Compile Include="Joins\SmartObjectSerialJoin.cs" />
+    <Compile Include="Joins\SmartObjectAnalogJoin.cs" />
+    <Compile Include="Joins\SmartObjectDigitalJoin.cs" />
+    <Compile Include="Joins\SmartObjectJoinManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
