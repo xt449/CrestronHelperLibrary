@@ -1,7 +1,7 @@
 ﻿using Crestron.SimplSharpPro.DeviceSupport;
 using System;
 
-namespace SimplSharpTools.Joins
+namespace CrestronHelperLibrary.SmartGraphics.Joins
 {
 	public class AnalogJoin : IJoin<ushort>
 	{
@@ -20,7 +20,7 @@ namespace SimplSharpTools.Joins
 			set => triList.UShortInput[id].UShortValue = value;
 		}
 
-		public event Action<ushort> OnChange;
+		public event Action<ushort>? OnChange;
 
 		internal void Change(ushort value) => OnChange?.Invoke(value);
 	}

@@ -4,18 +4,18 @@ using Crestron.SimplSharpPro;
 using Crestron.SimplSharpPro.DeviceSupport;
 using System.Collections.Generic;
 
-namespace SimplSharpTools.Joins
+namespace CrestronHelperLibrary.SmartGraphics.Joins
 {
 	public class JoinManager
 	{
+		private readonly Dictionary<uint, DigitalJoin> digitalJoins = new Dictionary<uint, DigitalJoin>();
+		private readonly Dictionary<uint, AnalogJoin> analogJoins = new Dictionary<uint, AnalogJoin>();
+		private readonly Dictionary<uint, SerialJoin> serialJoins = new Dictionary<uint, SerialJoin>();
+		private readonly Dictionary<uint, SmartObjectJoinManager> smartObjects = new Dictionary<uint, SmartObjectJoinManager>();
+
 		public readonly BasicTriListWithSmartObject triList;
 
-		private readonly Dictionary<uint, DigitalJoin> digitalJoins;
-		private readonly Dictionary<uint, AnalogJoin> analogJoins;
-		private readonly Dictionary<uint, SerialJoin> serialJoins;
-		private readonly Dictionary<uint, SmartObjectJoinManager> smartObjects;
-
-		public JoinManager(BasicTriListWithSmartObject triList, string sgdFileName = null)
+		public JoinManager(BasicTriListWithSmartObject triList, string? sgdFileName = null)
 		{
 			this.triList = triList;
 

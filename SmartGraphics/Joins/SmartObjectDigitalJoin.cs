@@ -1,7 +1,7 @@
 ﻿using Crestron.SimplSharpPro;
 using System;
 
-namespace SimplSharpTools.Joins
+namespace CrestronHelperLibrary.SmartGraphics.Joins
 {
 	public class SmartObjectDigitalJoin : IJoin<bool>
 	{
@@ -20,7 +20,7 @@ namespace SimplSharpTools.Joins
 			set => smartObject.BooleanInput[id].BoolValue = value;
 		}
 
-		public event Action<bool> OnChange;
+		public event Action<bool>? OnChange;
 
 		internal void Change(bool value) => OnChange?.Invoke(value);
 	}

@@ -1,7 +1,7 @@
 ﻿using Crestron.SimplSharpPro;
 using System;
 
-namespace SimplSharpTools.Joins
+namespace CrestronHelperLibrary.SmartGraphics.Joins
 {
 	public class SmartObjectSerialJoin : IJoin<string>
 	{
@@ -20,7 +20,7 @@ namespace SimplSharpTools.Joins
 			set => smartObject.StringInput[id].StringValue = value;
 		}
 
-		public event Action<string> OnChange;
+		public event Action<string>? OnChange;
 
 		internal void Change(string value) => OnChange?.Invoke(value);
 	}

@@ -1,15 +1,15 @@
 ﻿using Crestron.SimplSharpPro;
 using System.Collections.Generic;
 
-namespace SimplSharpTools.Joins
+namespace CrestronHelperLibrary.SmartGraphics.Joins
 {
 	public class SmartObjectJoinManager
 	{
-		public readonly SmartObject smartObject;
+		private readonly Dictionary<string, SmartObjectDigitalJoin> digitalJoins = new Dictionary<string, SmartObjectDigitalJoin>();
+		private readonly Dictionary<string, SmartObjectAnalogJoin> analogJoins = new Dictionary<string, SmartObjectAnalogJoin>();
+		private readonly Dictionary<string, SmartObjectSerialJoin> serialJoins = new Dictionary<string, SmartObjectSerialJoin>();
 
-		private readonly Dictionary<string, SmartObjectDigitalJoin> digitalJoins;
-		private readonly Dictionary<string, SmartObjectAnalogJoin> analogJoins;
-		private readonly Dictionary<string, SmartObjectSerialJoin> serialJoins;
+		public readonly SmartObject smartObject;
 
 		internal SmartObjectJoinManager(SmartObject smartObject)
 		{

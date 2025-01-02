@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SimplSharpTools.Joins
+namespace CrestronHelperLibrary.SmartGraphics.Joins
 {
 	public interface IJoin<T>
 	{

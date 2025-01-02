@@ -1,7 +1,7 @@
 ﻿using Crestron.SimplSharpPro.DeviceSupport;
 using System;
 
-namespace SimplSharpTools.Joins
+namespace CrestronHelperLibrary.SmartGraphics.Joins
 {
 	public class SerialJoin : IJoin<string>
 	{
@@ -20,7 +20,7 @@ namespace SimplSharpTools.Joins
 			set => triList.StringInput[id].StringValue = value;
 		}
 
-		public event Action<string> OnChange;
+		public event Action<string>? OnChange;
 
 		internal void Change(string value) => OnChange?.Invoke(value);
 	}
