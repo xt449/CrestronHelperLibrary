@@ -20,7 +20,7 @@ namespace CrestronHelperLibrary.SmartGraphics.Joins
 
 		public SmartObjectDigitalJoin GetDigitalJoin(string id)
 		{
-			if (digitalJoins.TryGetValue(id, out var digitalJoin))
+			if (digitalJoins.TryGetValue(id, out SmartObjectDigitalJoin? digitalJoin))
 			{
 				return digitalJoin;
 			}
@@ -30,7 +30,7 @@ namespace CrestronHelperLibrary.SmartGraphics.Joins
 
 		public SmartObjectAnalogJoin GetAnalogJoin(string id)
 		{
-			if (analogJoins.TryGetValue(id, out var analogJoin))
+			if (analogJoins.TryGetValue(id, out SmartObjectAnalogJoin? analogJoin))
 			{
 				return analogJoin;
 			}
@@ -40,7 +40,7 @@ namespace CrestronHelperLibrary.SmartGraphics.Joins
 
 		public SmartObjectSerialJoin GetSerialJoin(string id)
 		{
-			if (serialJoins.TryGetValue(id, out var serialJoin))
+			if (serialJoins.TryGetValue(id, out SmartObjectSerialJoin? serialJoin))
 			{
 				return serialJoin;
 			}

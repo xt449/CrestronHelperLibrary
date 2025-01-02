@@ -23,7 +23,7 @@ namespace CrestronHelperLibrary.SmartGraphics.Joins
 
 			if (sgdFileName != null)
 			{
-				var path = Path.Combine(Directory.GetApplicationDirectory(), sgdFileName);
+				string path = Path.Combine(Directory.GetApplicationDirectory(), sgdFileName);
 
 				if (!File.Exists(path))
 				{
@@ -36,7 +36,7 @@ namespace CrestronHelperLibrary.SmartGraphics.Joins
 
 		public DigitalJoin GetDigitalJoin(uint id)
 		{
-			if (digitalJoins.TryGetValue(id, out var digitalJoin))
+			if (digitalJoins.TryGetValue(id, out DigitalJoin? digitalJoin))
 			{
 				return digitalJoin;
 			}
@@ -46,7 +46,7 @@ namespace CrestronHelperLibrary.SmartGraphics.Joins
 
 		public AnalogJoin GetAnalogJoin(uint id)
 		{
-			if (analogJoins.TryGetValue(id, out var analogJoin))
+			if (analogJoins.TryGetValue(id, out AnalogJoin? analogJoin))
 			{
 				return analogJoin;
 			}
@@ -56,7 +56,7 @@ namespace CrestronHelperLibrary.SmartGraphics.Joins
 
 		public SerialJoin GetSerialJoin(uint id)
 		{
-			if (serialJoins.TryGetValue(id, out var serialJoin))
+			if (serialJoins.TryGetValue(id, out SerialJoin? serialJoin))
 			{
 				return serialJoin;
 			}
@@ -66,7 +66,7 @@ namespace CrestronHelperLibrary.SmartGraphics.Joins
 
 		public SmartObjectJoinManager GetSmartObject(uint id)
 		{
-			if (smartObjects.TryGetValue(id, out var smartObject))
+			if (smartObjects.TryGetValue(id, out SmartObjectJoinManager? smartObject))
 			{
 				return smartObject;
 			}
